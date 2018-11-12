@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Guessing Game!</title>
+    
+    <script>
+        // JavaScript Document
+
+var start = confirm("Guessing Game!\nI will think up a random number between 1 to 100.\nYou need to guess it in 10 chances.\nFor wrong guesses, I'll tell you if your guess is HIGH or LOW.\nReady?")
+    
+    if (start == false) {
+        document.write("Thank you. See you again");
+        exit();
+    }
+
+var randomNumber = Math.floor(Math.random() * 100) + 1;
+//var guessCount = 0;
+var userGuess = prompt("Guess the random number\nTurn 1 out of 10!\n","0 to 100");
+
+for (guessCount = 1; guessCount <= 10; guessCount++) { 
+    
+     
+    if (userGuess == randomNumber) {
+    document.write("WELL DONE! RIGHT ANSWER! Your last guess " + userGuess);
+    break;
+    
+    }
+    else if (userGuess > randomNumber) {
+    document.write(userGuess + " is too high.</br>");
+    var turn = 10 - guessCount;
+    userGuess = prompt(userGuess + " is too HIGH! Try again.\n" + turn + " turn left!\n", "0 to 100");
+    }
+    else {
+    document.write(userGuess + " is too low.</br>");
+    var turn = 10 - guessCount;
+    userGuess = prompt(userGuess + " is too LOW! Try again.\n" + turn + " turn left!\n", "0 to 100");
+
+    }
+
+}
+
+
+
+    </script>
+    </head>
+</html>
